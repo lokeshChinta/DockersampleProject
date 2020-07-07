@@ -1,0 +1,23 @@
+version: "2"
+services:
+  hub:
+    image: selenium/hub:3.14
+    ports:
+      - "4444:4444"
+  chrome:
+    image:  selenium/node-chrome:3.14
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=192.168.1.4
+  search-module:
+    image: chintalokesh/sample
+    depends_on:
+      - chrome
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=192.168.1.4
+      - MODULE=testng.xml
+    volumes:
+      - C:\Users\lokeshc2\eclipse-workspace\FrameworkProject02\Screenshots1:/usr/lokesh/Screenshots
+   
