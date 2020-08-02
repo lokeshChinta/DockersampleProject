@@ -13,6 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class GooglePageTest {
@@ -20,13 +21,15 @@ public class GooglePageTest {
 	RemoteWebDriver driver;
 	DesiredCapabilities caps;
 	File name;
+	
 	@Test
-	public void verifyGooglePageTest() throws Exception {
+	@Parameters({"url","fileName"})
+	public void verifyGooglePageTest(String url,String fileName) throws Exception {
 		caps=DesiredCapabilities.chrome();
-		name=new File(System.getProperty("user.dir")+"//Screenshots//verifyGooglePageTest.jpg");
-		
-		driver=new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"),caps);
-		driver.get("http://google.com");
+		name=new File(System.getProperty("user.dir")+"//Screenshots//"+fileName+".jpg");
+		System.out.println("File name is "+name);
+		driver=new RemoteWebDriver(new URL("http://192.168.1.6:4444/wd/hub"),caps);
+		driver.get(url);
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		
 		FileUtils.copyFile(src,name);
