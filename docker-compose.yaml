@@ -9,9 +9,9 @@ services:
     depends_on:
       - hub
     environment:
-      - HUB_HOST=192.168.1.4
+      - HUB_HOST=192.168.1.6  
   search-module:
-    image: chintalokesh/sample
+    image: chintalokesh/seleniumsample
     depends_on:
       - chrome
     environment:
@@ -19,5 +19,5 @@ services:
       - HUB_HOST=192.168.1.4
       - MODULE=testng.xml
     volumes:
-      - C:\Users\lokeshc2\eclipse-workspace\FrameworkProject02\Screenshots1:/usr/lokesh/Screenshots
+      - C:\Users\503197713\Study\DockersampleProject-master\DockersampleProject-master\Screenshots:/usr/lokesh/Screenshots
    
