@@ -19,5 +19,5 @@ services:
       - HUB_HOST=192.168.1.6
       - MODULE=testng.xml
     volumes:
-      - C:\Users\503197713\Study\DockersampleProject-master\DockersampleProject-master\Screenshots:/usr/lokesh/Screenshots
+      - ./Screenshots:/usr/lokesh/Screenshots
    
