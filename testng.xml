@@ -1,7 +1,26 @@
-<suite name ="suite1" verbose="10">
-<test name="test1">
+<suite name ="suite1" verbose="10" parallel="tests" thread-count="5">
+<test name="GooglePageTEst">
+<parameter name ="url" value="http://google.com"/>
+<parameter name="fileName" value="googlePage"/>
 <classes>
 <class name="com.tests.GooglePageTest"/>
 </classes>
 </test>
+
+<test name="GMAILPAGETEST">
+<parameter name ="url" value="http://gmail.com"/>
+<parameter name="fileName" value="GMAILPage"/>
+<classes>
+<class name="com.tests.GooglePageTest"/>
+</classes>
+</test>
+
+<test name="YAHOOPAGETEST">
+<parameter name ="url" value="http://yahoo.com"/>
+<parameter name="fileName" value="YahooPage"/>
+<classes>
+<class name="com.tests.GooglePageTest"/>
+</classes>
+</test>
+
 </suite>
