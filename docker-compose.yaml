@@ -16,7 +16,7 @@ services:
       - chrome
     environment:
       - BROWSER=chrome
-      - HUB_HOST=192.168.1.4
+      - HUB_HOST=192.168.1.6
       - MODULE=testng.xml
     volumes:
       - C:\Users\503197713\Study\DockersampleProject-master\DockersampleProject-master\Screenshots:/usr/lokesh/Screenshots
